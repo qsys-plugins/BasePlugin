@@ -63,9 +63,7 @@ then
   echo "updating version fix num"
 
   fixnum=${oldnum:4:1}
-  echo $fixnum
   ((fixnum++))
-  echo $fixnum
   newnum="${oldnum:0:3}.$fixnum.0"
   echo $newnum
 
