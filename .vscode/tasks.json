@@ -12,7 +12,7 @@
             },
             "command": "echo Hello",
             "windows": {
-                "command": "${fileDirname}\\..\\..\\PluginCompile\\PLUGCC.exe ${workspaceFolderBasename} ${file}"
+                "command": "${workspaceFolder}\\PluginCompile\\PLUGCC.exe ${workspaceFolderBasename} ${workspaceFolder}\\plugin.lua"
             },
             "presentation": {
                 "reveal": "always",
