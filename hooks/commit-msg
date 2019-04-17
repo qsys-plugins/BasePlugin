@@ -20,20 +20,22 @@
 # newnum=`expr $oldnum + 1`
 # sed -i "s/$oldnum\$/$newnum/g" file1.txt 
 
-if grep -Fxq "<ver_maj>" $1
+echo "$1"
+
+if grep -Fxq "<ver_maj>" "$1"
 then
   echo "updating version major num"
   cat ..\\info.lua | `cut -d 'Version = \"' -f 2` | `cut -d ',' -f 1` > oldnum
   echo oldnum
-elif grep -Fxq "<ver_min>" $1
+elif grep -Fxq "<ver_min>" "$1"
 then
   echo "updating version minor num"
 
-elif grep -Fxq "<ver_fix>" $1
+elif grep -Fxq "<ver_fix>" "$1"
 then
   echo "updating version fix num"
 
-elif grep -Fxq "<ver_dev>" $1
+elif grep -Fxq "<ver_dev>" "$1"
 then
   echo "updating version development num"
 
