@@ -39,30 +39,60 @@ echo "$1"
 
 oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 echo $oldnum
+newnum="$oldnum"
 
 if grep -Fq "<ver_maj>" "$1"
 then
   echo "updating version major num"
-  
-  majnum=${oldnum%%.*}
+
+  majnum=${oldnum:0:1}
   echo $majnum
   ((majnum++))
   echo $majnum
   newnum="$majnum.0.0.0"
   echo $newnum
+
 elif grep -Fxq "<ver_min>" "$1"
 then
   echo "updating version minor num"
+
+  minnum=${oldnum:2:1}
+  echo $minnum
+  ((minnum++))
+  echo $minnum
+  newnum="${oldnum:0:1}.$minnum.0.0"
+  echo $newnum
 
 elif grep -Fxq "<ver_fix>" "$1"
 then
   echo "updating version fix num"
 
+  fixnum=${oldnum:2:1}
+  echo $fixnum
+  ((fixnum++))
+  echo $fixnum
+  newnum="${oldnum:0:3}.$fixnum.0"
+  echo $newnum
+
 elif grep -Fxq "<ver_dev>" "$1"
 then
   echo "updating version development num"
 
+  devnum=${oldnum:6:1}
+  echo $devnum
+  ((devnum++))
+  echo $devnum
+  newnum="${oldnum%.*}$devnum"
+  echo $newnum
+
 else
   echo "updating version development num"
-   
+
+  devnum=${oldnum:6:1}
+  echo $devnum
+  ((devnum++))
+  echo $devnum
+  newnum="${oldnum%.*}$devnum"
+  echo $newnum 
+
 fi
