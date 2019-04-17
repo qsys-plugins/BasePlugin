@@ -62,7 +62,7 @@ elif grep -Fq "<ver_fix>" "$1"
 then
   echo "updating version fix num"
 
-  fixnum=${oldnum:2:1}
+  fixnum=${oldnum:4:1}
   echo $fixnum
   ((fixnum++))
   echo $fixnum
