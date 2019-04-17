@@ -56,7 +56,6 @@ then
   minnum=${oldnum:2:1}
   ((minnum++))
   newnum="${oldnum:0:1}.$minnum.0.0"
-  echo $newnum
 
 elif grep -Fq "<ver_fix>" "$1"
 then
@@ -65,25 +64,24 @@ then
   fixnum=${oldnum:4:1}
   ((fixnum++))
   newnum="${oldnum:0:3}.$fixnum.0"
-  echo $newnum
 
 elif grep -Fq "<ver_dev>" "$1"
 then
-  echo "updating version development num"
+  echo "updating version dev num"
 
   devnum=${oldnum:6:1}
   ((devnum++))
   newnum="${oldnum%.*}.$devnum"
-  echo $newnum
 
 else
-  echo "updating version development num"
+  echo "updating version dev num"
 
   devnum=${oldnum:6:1}
-  echo $devnum
   ((devnum++))
-  echo $devnum
   newnum="${oldnum%.*}.$devnum"
-  echo $newnum 
 
 fi
+
+echo $newnum
+sed -i "s/$oldnum\$/$newnum/g" info.lua
+#git add info.lua
