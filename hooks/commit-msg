@@ -22,7 +22,7 @@
 
 echo "$1"
 
-if grep -Fxq "<ver_maj>" "$1"
+if grep -Fq "<ver_maj>" "$1"
 then
   echo "updating version major num"
   cat ..\\info.lua | `cut -d 'Version = \"' -f 2` | `cut -d ',' -f 1` > oldnum
