@@ -3,7 +3,7 @@
 echo
 if [ -a .commit ]
     then
-    #rm .commit
+    rm .commit
     git add info.lua
     git commit --amend -C HEAD --no-verify
 fi
