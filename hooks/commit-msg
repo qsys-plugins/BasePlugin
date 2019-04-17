@@ -72,9 +72,7 @@ then
   echo "updating version development num"
 
   devnum=${oldnum:6:1}
-  echo $devnum
   ((devnum++))
-  echo $devnum
   newnum="${oldnum%.*}.$devnum"
   echo $newnum
 
