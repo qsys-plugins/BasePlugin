@@ -85,7 +85,7 @@ else
   echo $devnum
   ((devnum++))
   echo $devnum
-  newnum="${oldnum%.*}$devnum"
+  newnum="${oldnum%.*}.$devnum"
   echo $newnum 
 
 fi
