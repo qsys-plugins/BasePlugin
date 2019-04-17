@@ -84,4 +84,4 @@ fi
 
 echo $newnum
 sed -i "s/$oldnum\$/$newnum/g" info.lua
-#git add info.lua
+git add info.lua
