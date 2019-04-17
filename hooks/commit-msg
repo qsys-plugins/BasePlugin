@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# An example hook script to check the commit log message.
+# Called by "git commit" with one argument, the name of the file
+# that has the commit message.  The hook should exit with non-zero
+# status after issuing an appropriate message if it wants to stop the
+# commit.  The hook is allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "commit-msg".
+
+# PluginInfo = {
+#     Name = "Compile Test 4",
+#     Version = "0.0.0.3",
+#     Id = "COMPILEDPLUGINTEST",
+#     Description = "Compiled from Visual Studio Code",
+#     ShowDebug = false
+# }
+
+# oldnum=`cut -d ',' -f2 file1.txt`  
+# newnum=`expr $oldnum + 1`
+# sed -i "s/$oldnum\$/$newnum/g" file1.txt 
+
+if grep -Fxq "<ver_maj>" $1
+then
+  echo "updating version major num"
+  cat ..\\info.lua | `cut -d 'Version = \"' -f 2` | `cut -d ',' -f 1` > oldnum
+  echo oldnum
+elif grep -Fxq "<ver_min>" $1
+then
+  echo "updating version minor num"
+
+elif grep -Fxq "<ver_fix>" $1
+then
+  echo "updating version fix num"
+
+elif grep -Fxq "<ver_dev>" $1
+then
+  echo "updating version development num"
+
+else
+  echo "updating version development num"
+   
+fi
