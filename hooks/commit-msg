@@ -40,7 +40,7 @@ echo "$1"
 if grep -Fq "<ver_maj>" "$1"
 then
   echo "updating version major num"
-  oldnum="$( grep 'Version' info.lua )" #| cut -d $'\"' -f2 )" # | cut -d $'\"' -f1 )"
+  oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
   # cat info.lua | `cut -d 'Version = \"' -f 2` | `cut -d ',' -f 1` > oldnum
   echo $oldnum
 elif grep -Fxq "<ver_min>" "$1"
