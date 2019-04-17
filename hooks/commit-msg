@@ -46,11 +46,8 @@ then
   echo "updating version major num"
 
   majnum=${oldnum:0:1}
-  echo $majnum
   ((majnum++))
-  echo $majnum
   newnum="$majnum.0.0.0"
-  echo $newnum
 
 elif grep -Fxq "<ver_min>" "$1"
 then
