@@ -54,9 +54,7 @@ then
   echo "updating version minor num"
 
   minnum=${oldnum:2:1}
-  echo $minnum
   ((minnum++))
-  echo $minnum
   newnum="${oldnum:0:1}.$minnum.0.0"
   echo $newnum
 
