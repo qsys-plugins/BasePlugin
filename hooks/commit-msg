@@ -85,3 +85,4 @@ fi
 echo $newnum
 sed -i -E "s/$oldnum/$newnum/" info.lua
 grep 'Version' info.lua
+touch .commit
