@@ -48,6 +48,8 @@ then
   echo $majnum
   ((majnum++))
   echo $majnum
+  newnum=majnum + ".0.0.0"
+  echo $newnum
 elif grep -Fxq "<ver_min>" "$1"
 then
   echo "updating version minor num"
