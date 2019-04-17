@@ -49,7 +49,7 @@ then
   ((majnum++))
   newnum="$majnum.0.0.0"
 
-elif grep -Fxq "<ver_min>" "$1"
+elif grep -Fq "<ver_min>" "$1"
 then
   echo "updating version minor num"
 
@@ -60,7 +60,7 @@ then
   newnum="${oldnum:0:1}.$minnum.0.0"
   echo $newnum
 
-elif grep -Fxq "<ver_fix>" "$1"
+elif grep -Fq "<ver_fix>" "$1"
 then
   echo "updating version fix num"
 
@@ -71,7 +71,7 @@ then
   newnum="${oldnum:0:3}.$fixnum.0"
   echo $newnum
 
-elif grep -Fxq "<ver_dev>" "$1"
+elif grep -Fq "<ver_dev>" "$1"
 then
   echo "updating version development num"
 
