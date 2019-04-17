@@ -46,6 +46,8 @@ then
   
   majnum=${oldnum%%.*}
   echo $majnum
+  ((majnum++))
+  echo $majnum
 elif grep -Fxq "<ver_min>" "$1"
 then
   echo "updating version minor num"
