@@ -83,5 +83,5 @@ else
 fi
 
 echo $newnum
-sed -i "s/$oldnum\$/$newnum/g" "info.lua"
+sed -i -E "s/$oldnum\$/$newnum/g" "info.lua"
 grep 'Version' info.lua
