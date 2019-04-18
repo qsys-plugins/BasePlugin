@@ -1,14 +1,13 @@
 #!/bin/sh
 
-echo "$1"
-
+# STEP 1 Increment Version Number
 oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
-echo $oldnum
+#echo $oldnum
 newnum="$oldnum"
 
 if test "$1" = "ver_maj"
 then
-  echo "updating version major num"
+  #echo "updating version major num"
 
   majnum=${oldnum:0:1}
   ((majnum++))
@@ -16,7 +15,7 @@ then
 
 elif test "$1" = "ver_min"
 then
-  echo "updating version minor num"
+  #echo "updating version minor num"
 
   minnum=${oldnum:2:1}
   ((minnum++))
@@ -24,7 +23,7 @@ then
 
 elif test "$1" = "ver_fix"
 then
-  echo "updating version fix num"
+  #echo "updating version fix num"
 
   fixnum=${oldnum:4:1}
   ((fixnum++))
@@ -32,14 +31,14 @@ then
 
 elif test "$1" = "ver_dev"
 then
-  echo "updating version dev num"
+  #echo "updating version dev num"
 
   devnum=${oldnum:6:1}
   ((devnum++))
   newnum="${oldnum%.*}.$devnum"
 
 else
-  echo "updating version dev num"
+  #echo "updating version dev num"
 
   devnum=${oldnum:6:1}
   ((devnum++))
@@ -47,5 +46,17 @@ else
 
 fi
 
-echo $newnum
+#echo $newnum
 sed -i -E "s/$oldnum/$newnum/" info.lua
+
+# STEP 2 Create new Id from Name and updated Version
+oldid="$( grep 'Id' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
+#echo $oldid
+name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
+#echo $name
+
+newid="COMPILEDPLUGIN-$name-$newnum"
+newid="$( echo $newid | tr -d ' ' )"
+
+#echo $newid
+sed -i -E "s/$oldid/$newid/" info.lua
