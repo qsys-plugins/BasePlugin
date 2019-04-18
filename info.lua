@@ -1,7 +1,7 @@
 PluginInfo = {
-    Name = "Compile Test 5",
-    Version = "2.1.0.4",
-    Id = "COMPILEDPLUGIN-CompileTest5-2.1.0.4",
+    Name = "Test~Compile Test 6",
+    Version = "2.2.0.8",
+    Id = "COMPILEDPLUGIN-Test~CompileTest6-2.2.0.8",
     Description = "Compiled from Visual Studio Code",
     ShowDebug = false
 }

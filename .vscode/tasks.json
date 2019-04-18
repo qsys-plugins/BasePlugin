@@ -4,19 +4,32 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile Plugin",
+            "label": "Compile QSD Plugin",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "echo Hello",
+            "command": "echo Update QSD Plugin",
+            "windows": {
+                "command": "${workspaceFolder}\\.vscode\\copy_plugin.cmd"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "dependsOn": [ "Compile Plugin" ]
+        },
+        {
+            "label": "Compile Plugin",
+            "type": "shell",
+            "group": "build",
+            "command": "echo Compile Plugin",
             "windows": {
                 "command": "${workspaceFolder}\\PluginCompile\\PLUGCC.exe ${workspaceFolderBasename} ${workspaceFolder}\\plugin.lua"
             },
             "presentation": {
-                "reveal": "always",
-                "panel": "dedicated"
+                "reveal": "always"
             },
             "problemMatcher": [],
             "dependsOn": [ "Version" ]
@@ -25,13 +38,12 @@
             "label": "Version",
             "type": "shell",
             "group": "build",
-            "command": "echo ${input:ver_inc}",
+            "command": "echo Version",
             "windows": {
                 "command": "sh ${workspaceFolder}\\.vscode\\compile_plugin.sh ${input:ver_inc}"
             },
             "presentation": {
-                "reveal": "always",
-                "panel": "dedicated"
+                "reveal": "always"
             },
             "problemMatcher": []
         }

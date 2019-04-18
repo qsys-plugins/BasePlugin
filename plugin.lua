@@ -9,7 +9,7 @@ function GetColor(props)
 end
 
 function GetPrettyName(props)
-  return "Compile Test"
+  return "Compile Test " .. PluginInfo.Version
 end
 
 function GetProperties() -- No properties needed
@@ -28,5 +28,5 @@ end
 
 
 --[[ Initialization ]]--------------------------------------------------------------
-Status( "Discovering", "INITIALIZING" )
-StartInit()
+--Status( "Discovering", "INITIALIZING" )
+--StartInit()

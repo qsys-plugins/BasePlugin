@@ -5,44 +5,51 @@ oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 #echo $oldnum
 newnum="$oldnum"
 
+majnum=${oldnum%%.*}
+minnum=${oldnum#*.}
+minnum=${minnum%%.*}
+fixnum=${oldnum%.*}
+fixnum=${fixnum##*.}
+devnum=${oldnum##*.}
+
 if test "$1" = "ver_maj"
 then
-  #echo "updating version major num"
+  echo "updating version major num"
 
-  majnum=${oldnum:0:1}
+  #majnum=${oldnum:0:1}
   ((majnum++))
   newnum="$majnum.0.0.0"
 
 elif test "$1" = "ver_min"
 then
-  #echo "updating version minor num"
+  echo "updating version minor num"
 
-  minnum=${oldnum:2:1}
+  #minnum=${oldnum:2:1}
   ((minnum++))
-  newnum="${oldnum:0:1}.$minnum.0.0"
+  newnum="$majnum.$minnum.0.0"
 
 elif test "$1" = "ver_fix"
 then
-  #echo "updating version fix num"
+  echo "updating version fix num"
 
-  fixnum=${oldnum:4:1}
+  #fixnum=${oldnum:4:1}
   ((fixnum++))
-  newnum="${oldnum:0:3}.$fixnum.0"
+  newnum="$majnum.$minnum.$fixnum.0"
 
 elif test "$1" = "ver_dev"
 then
-  #echo "updating version dev num"
+  echo "updating version dev num"
 
-  devnum=${oldnum:6:1}
+  #devnum=${oldnum:6:1}
   ((devnum++))
-  newnum="${oldnum%.*}.$devnum"
+  newnum="$majnum.$minnum.$fixnum.$devnum"
 
 else
-  #echo "updating version dev num"
+  echo "updating version dev num"
 
-  devnum=${oldnum:6:1}
+  #devnum=${oldnum:6:1}
   ((devnum++))
-  newnum="${oldnum%.*}.$devnum"
+  newnum="$majnum.$minnum.$fixnum.$devnum"
 
 fi
 
@@ -58,5 +65,5 @@ name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 newid="COMPILEDPLUGIN-$name-$newnum"
 newid="$( echo $newid | tr -d ' ' )"
 
-#echo $newid
+echo $newid
 sed -i -E "s/$oldid/$newid/" info.lua
