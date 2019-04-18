@@ -1,1 +1,0 @@
-TYPE "C:\plugins-layout-test\Test\Test.qplug" > "%userprofile%\Documents\QSC\Q-Sys Designer\Plugins\Test\Test.qplug"
