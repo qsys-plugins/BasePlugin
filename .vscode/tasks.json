@@ -18,7 +18,30 @@
                 "reveal": "always",
                 "panel": "dedicated"
             },
+            "problemMatcher": [],
+            "dependsOn": [ "Version" ]
+        },
+        {
+            "label": "Version",
+            "type": "shell",
+            "group": "build",
+            "command": "echo ${input:ver_inc}",
+            "windows": {
+                "command": "sh ${workspaceFolder}\\.vscode\\compile_plugin.sh ${input:ver_inc}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
             "problemMatcher": []
         }
+    ],
+    "inputs": [
+        {
+            "id": "ver_inc",
+            "description": "Version Inc:",
+            "default": "ver_dev",
+            "type": "promptString"
+        },
     ]
 }
