@@ -4,12 +4,11 @@
 
 PluginInfo = {
     Name = "Base Plugin~Base Plugin",
-    Version = "0.0.0.3",
-    Id = "COMPILEDPLUGIN-BasePlugin-0.0.0.3",
+    Version = "0.0.0.1",
+    Id = "COMPILEDPLUGIN-BasePlugin-0.0.0.1",
     Description = "Compiled from Visual Studio Code",
-    ShowDebug = false
+    ShowDebug = true
 }
-
 
 function GetColor(props)
   return { 102, 102, 102 }
@@ -19,26 +18,46 @@ function GetPrettyName(props)
   return "Base Plugin " .. PluginInfo.Version
 end
 
-function GetProperties() -- No properties needed
+function GetPages()
+  pages = {}
+
+  --[[ Pages File Contents ]]
+
+  return pages
+end
+
+function GetProperties()
   props = {}
+
+  --[[ Properties File Contents ]]
+
   return props
 end
 
 function GetControls(props)
-  --[[
-CONTROLS FILE!
-YEA!
-With more stuff
-even more
-]]
+  ctrls = {}
+
+  --[[ Controls File Contents ]]
+
+  return ctrls
 end
 
 function GetControlLayout(props)
+  layout   = {}
+  graphics = {}
 
+  --[[ Layout File Contents ]]
+
+  return layout, graphics
 end
 
+--Start event based logic
+if Controls then
 
-
---[[ Initialization ]]--------------------------------------------------------------
---Status( "Discovering", "INITIALIZING" )
---StartInit()
+  --[[ Runtime File Contents ]]
+  
+  -- Called on START
+  Init()
+  IsEmulated()
+  
+end
