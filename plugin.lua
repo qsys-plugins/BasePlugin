@@ -12,21 +12,46 @@ function GetPrettyName(props)
   return "Base Plugin " .. PluginInfo.Version
 end
 
-function GetProperties() -- No properties needed
+function GetPages()
+  pages = {}
+
+  --[[ #include "pages.lua" ]]
+
+  return pages
+end
+
+function GetProperties()
   props = {}
+
+  --[[ #include "properties.lua" ]]
+
   return props
 end
 
 function GetControls(props)
+  ctrls = {}
+
   --[[ #include "controls.lua" ]]
+
+  return ctrls
 end
 
 function GetControlLayout(props)
+  layout   = {}
+  graphics = {}
 
+  --[[ #include "layout.lua" ]]
+
+  return layout, graphics
 end
 
+--Start event based logic
+if Controls then
 
-
---[[ Initialization ]]--------------------------------------------------------------
---Status( "Discovering", "INITIALIZING" )
---StartInit()
+  --[[ #include "runtime.lua" ]]
+  
+  -- Called on START
+  Init()
+  IsEmulated()
+  
+end

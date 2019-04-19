@@ -1,6 +1,1 @@
---[[
-CONTROLS FILE!
-YEA!
-With more stuff
-even more
-]]
+--[[ Controls File Contents ]]
