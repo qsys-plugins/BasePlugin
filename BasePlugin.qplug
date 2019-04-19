@@ -2,7 +2,14 @@
 -- by TEST
 -- April 2019
 
---[[ #include "info.lua" ]]
+PluginInfo = {
+    Name = "Base Plugin~Base Plugin",
+    Version = "0.0.0.3",
+    Id = "COMPILEDPLUGIN-BasePlugin-0.0.0.3",
+    Description = "Compiled from Visual Studio Code",
+    ShowDebug = false
+}
+
 
 function GetColor(props)
   return { 102, 102, 102 }
@@ -18,7 +25,12 @@ function GetProperties() -- No properties needed
 end
 
 function GetControls(props)
-  --[[ #include "controls.lua" ]]
+  --[[
+CONTROLS FILE!
+YEA!
+With more stuff
+even more
+]]
 end
 
 function GetControlLayout(props)

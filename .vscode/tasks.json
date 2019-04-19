@@ -12,7 +12,7 @@
             },
             "command": "echo Update QSD Plugin",
             "windows": {
-                "command": "${workspaceFolder}\\PluginCompile\\copy_plugin.cmd"
+                "command": "${workspaceFolder}\\PluginCompile\\copy_plugin.cmd ${workspaceFolderBasename}"
             },
             "presentation": {
                 "reveal": "always"
