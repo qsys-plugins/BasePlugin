@@ -6,8 +6,7 @@
   },
   "editor.renderControlCharacters": true,
   "files.associations": {
-    "*.json": "jsonc",
-    "*.qplug": "lua"
+    "*.json": "jsonc"
   },
   "files.autoSave": "off",
   "files.autoSaveDelay": 500,

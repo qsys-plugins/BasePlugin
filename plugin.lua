@@ -1,6 +1,6 @@
--- TEST PLUGIN
--- by TEST
--- April 2019
+-- Base Plugin
+-- by QSC
+-- Month 20YY
 
 --[[ #include "info.lua" ]]
 
