@@ -50,8 +50,4 @@ if Controls then
 
   --[[ #include "runtime.lua" ]]
   
-  -- Called on START
-  Init()
-  IsEmulated()
-  
 end

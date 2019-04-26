@@ -10,5 +10,6 @@
     "*.qplug": "lua"
   },
   "files.autoSave": "off",
-  "files.autoSaveDelay": 500
+  "files.autoSaveDelay": 500,
+  "editor.tabSize": 2
 }
