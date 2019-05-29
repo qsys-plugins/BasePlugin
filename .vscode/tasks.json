@@ -12,7 +12,13 @@
             },
             "command": "echo Update QSD Plugin",
             "windows": {
-                "command": "${workspaceFolder}\\PluginCompile\\copy_plugin.cmd ${workspaceFolderBasename}"
+                "command": ".\\plugincompile\\copy_plugin.cmd ${workspaceFolder} ${workspaceFolderBasename}",
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [ "/c"  ]
+                    }
+                }
             },
             "presentation": {
                 "reveal": "always"
@@ -26,7 +32,13 @@
             "group": "build",
             "command": "echo Compile Plugin",
             "windows": {
-                "command": "${workspaceFolder}\\PluginCompile\\PLUGCC.exe ${workspaceFolderBasename} ${workspaceFolder}\\plugin.lua"
+                "command": ".\\plugincompile\\PLUGCC.exe ${workspaceFolderBasename} ${workspaceFolder}\\plugin.lua",
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [ "/c"  ]
+                    }
+                }
             },
             "presentation": {
                 "reveal": "always"
@@ -40,7 +52,13 @@
             "group": "build",
             "command": "echo Version",
             "windows": {
-                "command": "sh ${workspaceFolder}\\PluginCompile\\compile_plugin.sh ${input:ver_inc}"
+                "command": "sh .\\plugincompile\\compile_plugin.sh ${input:ver_inc}",
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [ "/c"  ]
+                    }
+                }
             },
             "presentation": {
                 "reveal": "always"
