@@ -1,1 +1,3 @@
---[[ Runtime File Contents ]]
+-- This is the area where you would put your 'Runtime' code, or the 'control' aspect of your plugin.
+-- Once you are confident in your script, simply copy and paste that script here, and then you can fully test the plugin completely
+-- Don't forget to comment out your code pin and hide the debug before distributing!
