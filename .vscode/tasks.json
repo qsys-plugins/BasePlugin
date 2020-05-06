@@ -70,8 +70,16 @@
         {
             "id": "ver_inc",
             "description": "Version Inc:",
-            "default": "ver_dev",
-            "type": "promptString"
+            "type": "pickString",
+            "options": [
+                "ver_maj",
+                "ver_min",
+                "ver_fix",
+                "ver_dev",
+                "ver_none",
+                "CANCEL"
+            ],
+            "default": "ver_dev"
         },
     ]
 }
