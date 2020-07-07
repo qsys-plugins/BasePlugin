@@ -11,6 +11,6 @@ For first time builds, it will auto-generate an UUID for you plugin as well.
 
 Make sure to map a keyboard shortcut by navigating to File>Preferences>Keyboard Shortcuts. Type in "Tasks" and assign the desired shortcut to the Tasks: Run Build Task command
 
-### Support
+## Support
 
 If you have any questions or concerns, please contact qsyscontrolfeedback@qsc.com
