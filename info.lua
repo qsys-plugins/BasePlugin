@@ -1,5 +1,5 @@
 PluginInfo = {
-    Name = "Base Plugin~Base Plugin",
+    Name = "Base Plugin~A Test",
     Version = "0.0",
     BuildVersion = "0.0.0.0",
     Id = "<guid>",
