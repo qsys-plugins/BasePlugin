@@ -2,6 +2,8 @@
 
 This is a template plugin that you can download with some pre-written Lua code to get you started.
 
+Please note when cloning, the --recursive call should be used to ensure proper cloning of the PluginCompile submodule
+
 ## PluginCompile
 
 This is a submodule built for VS Code. Please note it is not intended to be used for any other source code editors.
