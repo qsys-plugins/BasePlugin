@@ -12,7 +12,7 @@
             },
             "command": "echo Update QSD Plugin",
             "windows": {
-                "command": ".\\plugincompile\\copy_plugin.cmd ${workspaceFolder} ${workspaceFolderBasename}",
+                "command": ".\\plugincompile\\copy_plugin.cmd \"${workspaceFolder}\" \"${workspaceFolderBasename}\"",
                 "options": {
                     "shell": {
                         "executable": "cmd.exe",
@@ -32,7 +32,7 @@
             "group": "build",
             "command": "echo Compile Plugin",
             "windows": {
-                "command": ".\\plugincompile\\PLUGCC.exe ${workspaceFolderBasename} ${workspaceFolder}\\plugin.lua",
+                "command": ".\\plugincompile\\PLUGCC.exe \"${workspaceFolderBasename}\" \"${workspaceFolder}\\plugin.lua\"",
                 "options": {
                     "shell": {
                         "executable": "cmd.exe",

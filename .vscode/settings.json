@@ -1,12 +1,8 @@
 {
-  "gitlens.keymap": "alternate",
-  "team.showWelcomeMessage": false,
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
   "editor.renderControlCharacters": true,
   "files.associations": {
-    "*.json": "jsonc"
+    "*.json": "jsonc",
+    "*.qplug": "lua"
   },
   "files.autoSave": "off",
   "files.autoSaveDelay": 500,
