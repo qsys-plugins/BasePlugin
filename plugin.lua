@@ -14,33 +14,33 @@ end
 
 --[=[]]
 function GetPages(props) --optional function if plugin has multiple pages
-  pages = {}
+  local pages = {}
   --[[ #include "pages.lua" ]]
   return pages
 end
 
 function GetModel(props) --optional function to define model if plugin supports more than one model
-  model = {}
+  local model = {}
   --[[ #include "model.lua" ]]
   return model
 end
 --]=]
 
 function GetProperties()
-  props = {}
+  local props = {}
   --[[ #include "properties.lua" ]]
   return props
 end
 
 function GetControls(props)
-  ctrls = {}
+  local ctrls = {}
   --[[ #include "controls.lua" ]]
   return ctrls
 end
 
 function GetControlLayout(props)
-  layout   = {}
-  graphics = {}
+  local layout   = {}
+  local graphics = {}
   --[[ #include "layout.lua" ]]
   return layout, graphics
 end

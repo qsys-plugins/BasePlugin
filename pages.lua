@@ -1,1 +1,2 @@
 --[[ Pages File Contents ]]
+-- page_index = props["page_index"].Value
